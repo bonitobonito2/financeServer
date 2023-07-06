@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: Zaali
+      POSTGRES_PASSWORD: Zaali
+      POSTGRES_DB: Zaali
+    ports:
+      - 5433:5432
+    volumes:
+      - zaali_data:/var/lib/postgresql/data
+
+volumes:
+  zaali_data:
