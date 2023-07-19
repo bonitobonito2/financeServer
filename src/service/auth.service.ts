@@ -15,11 +15,12 @@ export class AuthService {
     return this.authService;
   }
 
-  public registarMewarme() {
+  public async registarMewarme() {
     const usr = this.userRepository.create({
       email: "zaaltsagareli@gmail.com",
       date: new Date(),
     });
-    const obj = this.userRepository.save(usr);
+    const obj = await this.userRepository.save(usr);
+    return obj;
   }
 }
