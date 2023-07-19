@@ -11,6 +11,9 @@ export class AuthRouter {
   }
 
   private initialize() {
-    this.router.post("/registration-mewarme", this.authController.registration);
+    this.router.post(
+      "/registration-mewarme",
+      this.authController.registration.bind(this.authController)
+    );
   }
 }

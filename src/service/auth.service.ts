@@ -12,6 +12,7 @@ export class AuthService {
     if (!this.authService) {
       this.authService = new AuthService(myDataSource.getRepository(User));
     }
+    console.log(this.authService);
     return this.authService;
   }
 
