@@ -1,16 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import { myDataSource } from "./database/database.config";
-const app = express();
+import { App } from "./app";
 
-dotenv.config();
+const app = new App();
 
-myDataSource
-  .initialize()
-  .then(() => {
-    console.log("database connection estabilished");
-  })
-  .catch((err) => {
-    console.log(err);
-    throw err;
-  });
+function main(): void {
+  app.connectDatabase();
+  app.listen(3000);
+}
+
+main();
